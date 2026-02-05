@@ -1,4 +1,9 @@
 # MAXSwerve Python Template
+##Simmons notes:
+*  Joined working robot code with the example serve code. Files modified: robot.py
+*  Added intake.py from working robot code
+*  Added "robotpy-rev" to the requires section of the pyproject.toml
+
 The python implementation of [REV Robotics MAXSwerve Modules](https://docs.revrobotics.com/ion-build-system/motion/maxswerve) as adapted from the [REV Robotics CPP Template](https://github.com/REVrobotics/MAXSwerve-Cpp-Template) for use in an environment using RobotPy. Suitable for FIRST Robotics Teams that want to utilize swerve drive and are using Python for their robot code. As Python is now officially supported by FRC as of 2024, a python adaptation is necessary.
 
 ## Requirements
@@ -77,4 +82,5 @@ In this template, an XboxController class is utilized to control the robot. The 
 [REV Robotics MAXSwerve Module](https://www.revrobotics.com/rev-21-3005/)\
 [REV Robotics MAXSwerve Docs](https://docs.revrobotics.com/ion-build-system/motion/maxswerve)\
 [REV Robotics MAXSwerve CPP Template](https://github.com/REVrobotics/MAXSwerve-Cpp-Template)\
+
 [RobotPy Docs](https://robotpy.readthedocs.io/projects/wpilib/en/latest/index.html)
