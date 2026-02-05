@@ -16,13 +16,21 @@ logging.basicConfig(level=logging.DEBUG)
 class MyRobot(wpilib.TimedRobot):
     def robotInit(self) -> None:
         """Robot initialization function"""
-        self.driverController = wpilib.XboxController(constants.kDriverControllerPort)
+        ##############################################
+        ### Code below MODIFIED from last working Robot code
+        ### 'controller' changed to 'driverController' to match example code
+        ##############################################        
+        self.driverController = wpilib.XboxController(constants.kDriverControllerPort) 
         self.swerve = drivesubsystem.DriveSubsystem()
 
         # Slew rate limiters to make joystick inputs more gentle; 1/3 sec from 0 to 1.
         self.xspeedLimiter = wpimath.filter.SlewRateLimiter(3)
         self.yspeedLimiter = wpimath.filter.SlewRateLimiter(3)
         self.rotLimiter = wpimath.filter.SlewRateLimiter(3)
+        ##############################################
+        ### Code below added from last working Robot code
+        ##############################################
+        self.intake = IntakeSubsystem()
     
     def autonomousInit(self) -> None:
         pass
@@ -37,6 +45,15 @@ class MyRobot(wpilib.TimedRobot):
     def teleopPeriodic(self) -> None:
         # Teleop periodic logic
         self.driveWithJoystick(True)
+        ######################################
+        ### Code below added from last working Robot code
+        ######################################
+        if self.driverController.getAButton(): # X button!
+            self.intake.launch(1.0)
+        elif self.driverController.getXButton(): # B button!
+            self.intake.run_intake(-0.5)
+        else:
+            self.intake.stop()
         
     
     def testPeriodic(self) -> None:
@@ -75,6 +92,3 @@ class MyRobot(wpilib.TimedRobot):
 
 
         self.swerve.drive(xSpeed, ySpeed, rot, fieldRelative, rateLimit=True)
-
-if __name__ == "__main__":
-    wpilib.run(MyRobot)
