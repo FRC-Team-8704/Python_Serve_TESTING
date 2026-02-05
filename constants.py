@@ -14,8 +14,8 @@ kMagnitudeSlewRate = 1.8 # percent per second (1 = 100%)
 kRotationalSlewRate = 2.0 # percent per second (1 = 100%)
 
 # Chassis configuration
-kTrackWidth = 0.6953 # Distance between centers of right and left wheels on robot METERS
-kWheelBase = 0.6953 # Distance between centers of front and back wheels on robot METERS
+kTrackWidth = 0.645 # Distance between centers of right and left wheels on robot METERS
+kWheelBase = 0.542 # Distance between centers of front and back wheels on robot METERS
 
 # Angular offsets of the modules relative to the chassis in radians
 kFrontLeftChassisAngularOffset = -math.pi / 2
@@ -24,15 +24,15 @@ kRearLeftChassisAngularOffset = math.pi
 kRearRightChassisAngularOffset = math.pi / 2
 
 # SPARK MAX CAN IDs
-kFrontLeftDrivingCanId = 2
-kRearLeftDrivingCanId = 8
-kFrontRightDrivingCanId = 4
-kRearRightDrivingCanId = 6
+kFrontLeftDrivingCanId = 1
+kRearLeftDrivingCanId = 3
+kFrontRightDrivingCanId = 7
+kRearRightDrivingCanId = 5
 
-kFrontLeftTurningCanId = 3
-kRearLeftTurningCanId = 1
-kFrontRightTurningCanId = 5
-kRearRightTurningCanId = 7
+kFrontLeftTurningCanId = 2
+kRearLeftTurningCanId = 4
+kFrontRightTurningCanId = 8
+kRearRightTurningCanId = 6
 
 """ MODULE CONSTANTS """
 # Invert the turning encoder, since the output shaft rotates in the opposite direction
@@ -95,6 +95,7 @@ kThetaControllerConstraints = wpimath.trajectory.TrapezoidProfile.Constraints(kM
 """ OI Constants """
 kDriverControllerPort = 0
 kDriveDeadband = 0.08
+
 
 
 
